@@ -1,10 +1,10 @@
 class Game {
     constructor() {
-        this.frogs = 6
+        this.frogs = 5
         this.score = 0
         this.level = 1
         this.speed = width/550
-        this.time = 60
+        this.time = 30
 
         //key down prev frame
         this.kdpf = false
@@ -76,6 +76,8 @@ class Game {
             }
             iy++
         }
+
+        this.topFrogs = []
     }
     build() {
         textSize(size/3)
@@ -85,7 +87,7 @@ class Game {
 
         fill("#bfc2f2")
         textAlign(CENTER, CENTER)
-        text("FROGS:"+this.frogs, width/2, height-size*1.15)
+        text("FROGS:"+this.frogs, size*7, height-size*1.15)
 
         fill("yellow")
         textAlign(RIGHT, CENTER)
@@ -150,15 +152,39 @@ class Game {
 
         this.cars.forEach((c) => {c.draw()})
         this.truck.forEach((t) => {t.draw()})
+        this.topFrogs.forEach((f) => {f.draw()})
 
         this.sounds()
+
+        this.showTime()
+
+        //when complete.mp3 finishes
+        if(!sounds.complete.isPlaying() && this.topFrogs.length == 5) {
+            this.topFrogs = []
+            this.score += 1000
+        }
     }
     sounds() {
         if(this.canSound) {
-            if(!sounds.main.isPlaying() && !sounds.respawn.isPlaying()) sounds.main.play()
+            if(!sounds.main.isPlaying() && !sounds.respawn.isPlaying() && !sounds.complete.isPlaying() && frog.frame < 4) sounds.main.play()
         } else {
             if(keyIsPressed || mouseIsPressed) this.canSound = true
         }
+    }
+    addTopFrog(x) {
+        this.topFrogs.push(new Thing(30, x, 0))
+        if(this.topFrogs.length == 5) {
+            sounds.main.stop()
+            sounds.complete.play()
+        }
+    }
+    showTime() {
+        push()
+        rectMode(CORNERS)
+        noStroke()
+        fill('yellow')
+        rect(width-size*2.3, height-size*1.4, width-this.time*(width/150)-size*2.5, height-size*0.9)
+        pop()
     }
 }
 
