@@ -4,17 +4,17 @@ let images = []
 let sounds = {}
 
 function preload() {
-    font = loadFont("frogger.ttf")
-    for(i=0; i<35; i++) images.push(loadImage("images/frog_"+i+".png"))
+    font = loadFont("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/frogger.ttf")
+    for(i=0; i<35; i++) images.push(loadImage("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/images/frog_"+i+".png"))
 
-    sounds.main = loadSound("sounds/main.mp3")
-    sounds.hop = loadSound("sounds/hop.mp3")
-    sounds.respawn = loadSound("sounds/respawn.mp3")
-    sounds.over = loadSound("sounds/over.mp3")
-    sounds.complete = loadSound("sounds/complete.mp3")
-    sounds.safe = loadSound("sounds/landingSafe.mp3")
-    sounds.dieRoad = loadSound("sounds/dieRoad.mp3")
-    sounds.dieWater = loadSound("sounds/dieWater.mp3")
+    sounds.main = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/main.mp3")
+    sounds.hop = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/hop.mp3")
+    sounds.respawn = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/respawn.mp3")
+    sounds.over = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/over.mp3")
+    sounds.complete = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/complete.mp3")
+    sounds.safe = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/landingSafe.mp3")
+    sounds.dieRoad = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/dieRoad.mp3")
+    sounds.dieWater = loadSound("https://cdn.jsdelivr.net/gh/GreyBeard42/frogger@main/sounds/dieWater.mp3")
 }
 
 function setup() {
