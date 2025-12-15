@@ -1,0 +1,17 @@
+{
+  "title": "Frogger",
+  "shortTitle": "frogger",
+  "description": "A p5.js recreation of Frogger",
+
+  "status": "active",
+  "version": "v1",
+
+  "date": "11/27/2024",
+
+  "tags": [
+    "javascript",
+    "p5.js",
+    "game",
+    "retro"
+  ]
+}
