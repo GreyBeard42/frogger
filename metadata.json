@@ -1,6 +1,5 @@
 {
   "title": "Frogger",
-  "shortTitle": "frogger",
   "desc": "A p5.js recreation of Frogger",
 
   "status": "archived",
